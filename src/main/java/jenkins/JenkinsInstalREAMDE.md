@@ -71,7 +71,7 @@ tail -f nohup.out
 
 ---
 
-## Jenkins配置（解锁 Jenkins）
+## Jenkins配置（解锁 jenkins）
 访问地址：190.18.2.17:9093。进入jenkins界面
 ![jenkins2](../../resources/images/jenkins/jenkins2.png)
 管理员密码已写入日志中，该文件在
@@ -106,14 +106,14 @@ cb64bc4820c1495187cae9291f6f30e6
 ![jenkins8](../../resources/images/jenkins/jenkins8.png)
 
 ---
-### 三、开始使用 Jenkins 
+### 三、开始使用 jenkins 
 ![jenkins6](../../resources/images/jenkins/jenkins6.png)
 
 ---
 ### 四、Jenkins系统化配置
 ### 1. Jenkins中文配置（不需要中文可跳过）
 注：v2.176.3默认是英文的，若想转为中文版本（但还是不完全中文），可以在插件管理中安装插件——Localization: Chinese (Simplified)，Jenkins任何插件安装成功，需重启才能生效
-> 主界面-->系统管理（Manage Jenkins）-->插件管理（Manage Plugins）-->可选插件（available）中找到Localization: Chinese (Simplified)插件进行安装
+> 主界面-->系统管理（Manage jenkins）-->插件管理（Manage Plugins）-->可选插件（available）中找到Localization: Chinese (Simplified)插件进行安装
 
 已安装的打上对勾后重启jenkins即可
 ![jenkins9](../../resources/images/jenkins/jenkins9.png)
@@ -127,12 +127,26 @@ cb64bc4820c1495187cae9291f6f30e6
 下图中的Maven、git或者SVN、JDK环境都是事先安装好的
 
 注：配置git或者SVN取决于项目使用的版本控制工具，SVN在Jenkins中不需要配置，安装好插件就行
-
 ![jenkins12](../../resources/images/jenkins/jenkins12.png)
+
+#### Maven Configuration配置
+>* Default settings provider = Settings file in filesystem]
+>* File path = /usr/local/maven/apache-maven-3.3.9/conf/settings.xml
+
+>* Default global settings provider = Global settings file on filesystem
+>* File path = /usr/local/maven/apache-maven-3.3.9/conf/settings.xml
+
+#### JDK配置
+>* Name = jdk8（名字可以随便起）
+>* JAVA_HOME = /usr/local/java/jdk1.8.0_271
+
 ![jenkins13](../../resources/images/jenkins/jenkins13.png)
+#### Maven配置
+>* Name = maven3.3.9（名字可以随便起）
+>* MAVEN_HOME = /usr/local/maven/apache-maven-3.3.9
 
 ### 4. 常用插件安装
-> 主界面 >> 系统管理(Manage Jenkins) >> 插件管理(Manage Plugins) >> 可选插件(available)进行插件的安装
+> 主界面 >> 系统管理(Manage jenkins) >> 插件管理(Manage Plugins) >> 可选插件(available)进行插件的安装
 
 插件名称|作用
 :------|:---------
@@ -144,11 +158,16 @@ Publish Over SSH|说明：远程部署时需要，和Jenkins不在同一个服�
 Pipeline|流水线工作插件，将jenkins分部操作形成流水线，创建任务时选择流水线工程即可
 Blue Ocean|蓝色的海洋，CI/CD pipeline（持续集成、交付、部署 流水线）可视化界面，流水线的可视化界面
 disable_output_color|Jenkins控制台日志变色色
-
+Maven Integration|创建Maven任务需要此插件（jenkins有7中创建任务方式，比如：流水线、自由风格、maven、多分支流水线等等）
 
 ### 好了，jenkins环境的基本配置部署完毕，接下来的操作是创建任务，创建项目，开始自动化部署操作！！！！
 
+---
+---
+---
+[一、Jenkins创建Maven任务](JenkinsCreateMavenProjectREMADE.md)
 
+[二、Jenkins创建Pipeline任务](JenkinsCreatePipelineProjectREMADE.md)
 
 
 
