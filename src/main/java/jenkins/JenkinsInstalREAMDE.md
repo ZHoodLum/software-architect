@@ -1,7 +1,7 @@
 # Jenkins环境安装、部署
 
 ## 目录
-[Jenkins启动](#1.Jenkins启动)
+[TOC]
 
 ---
 ---
