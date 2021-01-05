@@ -1,7 +1,7 @@
 # Jenkins环境安装、部署
 
 ## 目录
-@[TOC](可改名称)
+[1.环境准备](#1)
 
 ---
 ---
@@ -21,7 +21,7 @@ jenkins|jenkins 2.273|[下载](http://updates.jenkins-ci.org/download/war/)|&nbs
 
 ---
 
-## 1.Jenkins启动
+## <h2 id="1">Jenkins启动</h2>
 我这⾥下载的是 jenkins.war 安装包
 ### 一、创建⽬录 /usr/local/jenkins
 在 /usr/local/ 下创建 jenkins ⽂件夹并进⼊，通过SFTP将 jenkins.war 安装包上传到该目录（/usr/local/jenkins）下，也可以自行选择文件位置
