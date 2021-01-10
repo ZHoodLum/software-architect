@@ -171,8 +171,8 @@ disable_output_color|Jenkins控制台日志变色色
 Maven Integration|创建Maven任务需要此插件（jenkins有7中创建任务方式，比如：流水线、自由风格、maven、多分支流水线等等）
 Multiple SCMs|尽管Git插件可以做到同步多个git库，但是只能同步多个git库的同一个分支，如果你的项目恰好需要不同库的不同分支进行同步
 Git plugin|Jenkins没有默认安装Git插件，需要Git库同步时候，需要手动选择安装git插件
-GitHub plugin|与Githup进行连接，远程触发Jenkins构建
-Credentials Binding|凭证管理,凭据可以用来存储需要密文保护的数据库密码、Githup密码信息Gitlab密码信息、Docker私有仓库密码等，以便Jenkins可以和这些第三方的应用进行交互。
+GitHub plugin|与GitHub进行连接，远程触发Jenkins构建
+Credentials Binding|凭证管理,凭据可以用来存储需要密文保护的数据库密码、GitHub密码信息Gitlab密码信息、Docker私有仓库密码等，以便Jenkins可以和这些第三方的应用进行交互。
 
 好了，jenkins环境的基本配置部署完毕，接下来的操作是创建任务，创建项目，开始自动化部署操作！！！！
 
