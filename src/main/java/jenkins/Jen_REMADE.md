@@ -4,7 +4,7 @@
 ---
 ## 目录
 
-* [1、初始Jenkins](Jenkins_HelloWorldREMADE.md)
+* [1、初识Jenkins](Jenkins_HelloWorldREMADE.md)
 * [2、Jenkins环境安装](Jenkins_InstalREAMDE.md)
 * [3、Jenkins+SVN+Maven创建任务](Jenkins_SVN_MavenREMADE.md)
 * [4、Jenkins+SVN+Maven+Pipeline创建任务](Jenkins_SVN_Maven_PipelineREMADE.md)
