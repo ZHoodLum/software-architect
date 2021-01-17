@@ -88,6 +88,10 @@ tail -f nohup.out
 ```shell script
 less /root/.jenkins/secrets/initialAdminPassword
 
+或者
+
+cat /root/.jenkins/secrets/initialAdminPassword
+
 cb64bc4820c1495187cae9291f6f30e6
 ```
 密文同时也是 admin 账号的密码,输入后点击【继续】按钮
