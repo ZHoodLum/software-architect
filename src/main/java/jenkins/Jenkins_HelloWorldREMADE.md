@@ -10,7 +10,8 @@
 文档|地址|备注
 :----|:--------:|:----
 Jenkins中文官方文档|[链接](https://www.jenkins.io/zh/doc/)|包括Jenkins入门、教程、用户手册、参考资料（流水线语法）
-Jenkins官方地址|[链接](https://www.jenkins.io/)
+Jenkins官方地址|[链接](https://www.jenkins.io/)|
+Jenkins源码Github地址|[链接](https://github.com/jenkinsci/jenkins)|Jenkins的源码地址
 自动化部署博客|[博主链接](https://www.cnblogs.com/momoyan/p/12775996.html#auto-id-3)|一个博主的链接，里面也有关于自动化部署的文章
 
 ---
@@ -18,6 +19,7 @@ Jenkins官方地址|[链接](https://www.jenkins.io/)
 软件开发生命周期又叫做SDLC（Software Development Life Cycle），它是集合了计划、开发、测试
 和部署过程的集合。如下图所示 ：
 ![jenkins48](../../resources/images/jenkins/jenkins48.png)
+
 ### 1. 需求分析
 这是生命周期的第一阶段，根据项目需求，团队执行一个可行性计划的分析。项目需求可能是公司内部
 或者客户提出的。这阶段主要是对信息的收集，也有可能是对现有项目的改善和重新做一个新的项目。

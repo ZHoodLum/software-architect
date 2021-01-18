@@ -80,7 +80,7 @@ ngrok|内网穿透工具 [链接](https://ngrok.com/download)
 
 ## 五、Jenkins部署在本地VM
 ###  1. 安装Git
-　　Jenkins安装在本地的，需要安装Git环境，并与jenkins在同一台服务器，Linux操作系统环境安装Git详细步骤参考文章：[Git环境部署(Windows和Linux操作系统环境)](../environmentdeployment/Git_InstallREMADE.md)
+　　安装Git环境，并与jenkins在同一台服务器，Linux操作系统环境安装Git详细步骤参考文章：[Git环境部署(Windows和Linux操作系统环境)](../environmentdeployment/Git_InstallREMADE.md)
 
 ### 2. IP地址进行内网穿透
 　　将虚拟机的IP地址+端口号暴露给公网，供公网可以访问的到
@@ -91,7 +91,7 @@ ngrok|[链接](https://ngrok.com/download)
 ngrokAPI文档|[链接](https://ngrok.com/docs)
 GitHub的WebhookAPI文档|[链接](https://docs.github.com/en/free-pro-team@latest/developers/webhooks-and-events)
 
-　　理解: 因为Jenkins的地址是http://localhost:8080，这个地址只能在本机访问，GitHub是访问不到这个网址的，所以要把本机的8080端口也能让外网访问的到暴露给外网。
+　　理解: 因为Jenkins的地址是http://localhost:9093，这个地址只能在本机访问，GitHub是访问不到这个网址的，所以要把本机的9093端口也能让外网访问的到暴露给外网。
 
 打开ngrok.exe文件，运行ngrok.exe
 
@@ -170,13 +170,34 @@ GitHub hook trigger for GITScm polling|http://b34190894fc4.ngrok.io/github-webho
 　　以上配置只要GitHub的URL和Jenkins的URL配置正确，内网穿透工具ngrok启动基本上就不会有问题。
 上面这个是Jenkins在本地环境的情况下，结合GitHub触发Jenkins自动构建的操作步骤，那么Jenkins部署在公网情况下，如何配置呢？？？？
 
+### 7. Gitlab配置webhook实现Jenkins自动构建
+
+1）开启webhook功能 使用root账户登录到后台
+
+点击Admin Area -> Settings -> Network 勾选"Allow requests to the local network from web hooks and services"
+
+![jenkins102](../../resources/images/jenkins/jenkins102.png)
+
+2）在项目添加webhook 
+
+点击项目->Settings->Integrations
+
+![jenkins103](../../resources/images/jenkins/jenkins103.png)
+
+
+
+
+
+
+
 ---
 ----
 
 ## 六、Jenkins部署在公网
 ### 1. 配置要求
->* Jenkins已经安装Github插件
+>* Jenkins安装Github插件
 >* Jenkins服务器部署在公网，GitHub可以访问jenkins的IP地址
+>* 服务器安装Git环境
 
 ### 2. jenkins配置webhook
 #### 2.1 配置Jenkins通过Webhook执行自动化构建

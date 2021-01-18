@@ -90,7 +90,7 @@ GitHub仓库|Git plugin、GitHub plugin
 
 ### 2. Jenkins设置自动构建
  ![jenkins84](../../resources/images/jenkins/jenkins84.png)
- 
+
 等会需要把生成的webhook URL配置到Gitlab中。
 
 ### 3. Gitlab配置webhook
@@ -99,18 +99,18 @@ GitHub仓库|Git plugin、GitHub plugin
 
 `勾选"Allow requests to the local network from web hooks and services"`
 ![jenkins85](../../resources/images/jenkins/jenkins85.png)
+
  
- 
- 
+
 #### 3.2 在项目添加webhook
 点击项目 >> Settings >> Integrations
 ![jenkins86](../../resources/images/jenkins/jenkins86.png)
- 
+
 ` 注意：以下设置必须完成，否则会报错！`
 
  Manage Jenkins >> Configure System
 ![jenkins87](../../resources/images/jenkins/jenkins87.png)
-  
+
 ---
 ## 三、Jenkins的参数化构建 
 有时在项目构建的过程中，我们需要根据用户的输入动态传入一些参数，从而影响整个构建结果，这时我们可以使用参数化构建。
@@ -280,11 +280,82 @@ pipeline {
 系统设置 >> Extended E-mail Notification >> Content Token Reference，点击旁边的`?号`
 ![jenkins101](../../resources/images/jenkins/jenkins101.png)
 
+## 五、添加Git凭证（Add Credentials）
+
+　　Jenkins管理（Manage Jenkins） >> 凭证管理（manage Credentials） >> 
+
+### 1. 点击Jenkins
+
+![jenkins62](E:/ztools/ideaproject/software-architect/src/main/resources/images/jenkins/jenkins62.png)
+
+### 2. 选择全局凭证或者全局凭证旁边的下三角号
+
+![jenkins63](E:/ztools/ideaproject/software-architect/src/main/resources/images/jenkins/jenkins63.png)
+
+### 3. 选择添加凭证
+
+![jenkins64](E:/ztools/ideaproject/software-architect/src/main/resources/images/jenkins/jenkins64.png)
+可以添加的凭证有五种：
+
+>* Username with password：用户名和密码
+>* SSH Username with private key： 使用SSH用户和密钥
+>* Secret file：需要保密的文本文件，使用时Jenkins会将文件复制到一个临时目录中，再将文件路径设置到一个变量中，等构建结束后，所复制的Secret file就会被删除。
+>* Secret text：需要保存的一个加密的文本串，如钉钉机器人或Github的api token
+>* Certificate：通过上传证书文件的方式
+
+常用的凭证类型有：`Username with password（用户名密码）`和`SSH Username with private key（SSH密钥）`
 
 
 
+### 4. 通过凭证登录方式
+
+#### 4.1 使用用户名密码登录
+
+凭证类型选择`Username with password`，输入正确的用户名和密码即可！！
+
+![jenkins64](E:/ztools/ideaproject/software-architect/src/main/resources/images/jenkins/jenkins64.png)
+
+#### 4.2 使用SSH密钥（登录GitLab为例）
+
+SSH密钥类型
+
+![jenkins104](E:/ztools/ideaproject/software-architect/src/main/resources/images/jenkins/jenkins104.png)
+
+1）使用root用户生成公钥和私钥
+
+```
+ssh-keygen -t rsa
+```
+
+在/root/.ssh/目录保存了公钥和使用
+
+> * id_rsa：私钥文件
+
+> * id_rsa.pub：公钥文件
+
+2）把生成的公钥放在Gitlab中
+
+以root账户登录 >> 点击头像 >> Settings >> SSH Keys 
+
+复制刚才id_rsa.pub文件的内容到这里，点击"Add Key"
+
+**复制命令：**
+
+```
+clip</root/.ssh/id_rsa.pub
+```
 
 
+
+3）在Jenkins中添加凭证，配置私钥
+
+在Jenkins添加一个新的凭证，类型为"SSH Username with private key"，把刚才生成私有文件内容复 制过来。
+
+**复制命令：**
+
+```
+clip</root/.ssh/id_rsa
+```
 
 
 

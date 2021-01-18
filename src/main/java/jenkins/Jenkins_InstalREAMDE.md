@@ -9,14 +9,15 @@
 ## 一、环境准备
 以下环境最好与项目保持一致！！！
 
-安装文件|版本|下载地址一|下载地址一|备注
-:---:|:---|:---:|:---:|:---
-VM 虚拟机|VMware Workstation 15|[下载](https://my.vmware.com/cn/web/vmware/downloads/info/slug/desktop_end_user_computing/vmware_workstation_pro/15_0)
-JDK|jdk-8u271-linux-x64.tar.gz|[国内镜像下载](https://mirrors.tuna.tsinghua.edu.cn/AdoptOpenJDK/8/jdk/x64/linux/)|[官方地址下载](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)
-tomcat|apache-tomcat-8.5.61.tar.gz|[下载](https://tomcat.apache.org/download-80.cgi)|&nbsp;|非必需，Jenkins是否需要通过Tomcat启动
-maven|apache-maven-3.3.9-bin.tar.gz|[下载](https://mirrors.tuna.tsinghua.edu.cn/apache/maven/maven-3/3.3.9/source/)
-SVN|Subversion 1.12.2|[下载](https://mirrors.tuna.tsinghua.edu.cn/apache/subversion/)|&nbsp;|本地需安装Subversion，用于提交项目；SVN服务器可以安装在本地(宿主机)的或者服务器上，用于管理版本
-jenkins|jenkins 2.273|[下载](http://updates.jenkins-ci.org/download/war/)|&nbsp;|jenkins可以通过tomcat、docker、war包形式启动，本次使用war包的形式直接启动jenkins
+安装文件|版本|安装地址|下载地址一|下载地址二|备注
+:---:|:---|:---:|:---:|:---|-----
+VM 虚拟机|VMware Workstation 15||[下载](https://my.vmware.com/cn/web/vmware/downloads/info/slug/desktop_end_user_computing/vmware_workstation_pro/15_0)||
+JDK|jdk-8u271-linux-x64.tar.gz|[JDK安装](../environmentdeployment/JDK_InstallREMADE.md)|[国内镜像下载](https://mirrors.tuna.tsinghua.edu.cn/AdoptOpenJDK/8/jdk/x64/linux/)|[官方地址下载](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)|
+tomcat|apache-tomcat-8.5.61.tar.gz|[Tomacat安装](../environmentdeployment/Tomcat_InstallREMADE.md)|[下载](https://tomcat.apache.org/download-80.cgi)|&nbsp;|非必需，Jenkins是否需要通过Tomcat启动
+maven|apache-maven-3.3.9-bin.tar.gz|[Maven安装](../environmentdeployment/Maven_InstallREMADE.md)|[下载](https://mirrors.tuna.tsinghua.edu.cn/apache/maven/maven-3/3.3.9/source/)||
+SVN|Subversion 1.12.2||[下载](https://mirrors.tuna.tsinghua.edu.cn/apache/subversion/)|&nbsp;|本地需安装Subversion，用于提交项目；SVN服务器可以安装在本地(宿主机)的或者服务器上，用于管理版本
+Git||[Git安装](../environmentdeployment/Git_InstallREMADE.md)|||
+jenkins|jenkins 2.273||[下载](http://updates.jenkins-ci.org/download/war/)|&nbsp;|jenkins可以通过tomcat、docker、war包形式启动，本次使用war包的形式直接启动jenkins
 
 ---
 
@@ -85,6 +86,7 @@ tail -f nohup.out
 访问地址：190.18.2.17:9093。进入jenkins界面
 ![jenkins2](../../resources/images/jenkins/jenkins2.png)
 管理员密码已写入日志中，该文件在
+
 ```shell script
 less /root/.jenkins/secrets/initialAdminPassword
 
@@ -159,7 +161,15 @@ cb64bc4820c1495187cae9291f6f30e6
 >* Name = maven3.3.9（名字可以随便起）
 >* MAVEN_HOME = /usr/local/maven/apache-maven-3.3.9
 
+#### Git配置
+
+> * 使用SVN不需要配置此选项
+> * Jenkins部署在公网的不需要配置
+
+
+
 ### 4. 常用插件安装
+
 > 主界面 >> 系统管理(Manage jenkins) >> 插件管理(Manage Plugins) >> 可选插件(available)进行插件的安装
 
 插件名称|作用
@@ -177,13 +187,16 @@ Multiple SCMs|尽管Git插件可以做到同步多个git库，但是只能同步
 Git plugin|Jenkins没有默认安装Git插件，需要Git库同步时候，需要手动选择安装git插件
 GitHub plugin|与GitHub进行连接，远程触发Jenkins构建
 Credentials Binding|凭证管理,凭据可以用来存储需要密文保护的数据库密码、GitHub密码信息Gitlab密码信息、Docker私有仓库密码等，以便Jenkins可以和这些第三方的应用进行交互。
+Role-based Authorization Strategy|管理用户权限插件
+gitlab|使用webhook自动触发jenkins需要使用的插件
+gitlab hook|使用webhook自动触发jenkins需要使用的插件
 
 好了，jenkins环境的基本配置部署完毕，接下来的操作是创建任务，创建项目，开始自动化部署操作！！！！
 
 ---
 ---
 ---
-[二、Jenkins+SVN+Maven创建任务](Jenkins_SVN_MavenREMADE.mdd)
+[二、Jenkins+SVN+Maven创建任务](Jenkins_SVN_MavenREMADE.md)
 
 [三、Jenkins+SVN+Maven+Pipeline创建任务](Jenkins_SVN_Maven_PipelineREMADE.md)
 
