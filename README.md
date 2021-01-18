@@ -26,8 +26,8 @@ README.md|项目说明文件
 
 序号|Github链接|本地链接|README路径
 :---|:---|:---|:---
-1|[Jenkins自动化部署](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/Jen_README.md)|[Jenkins自动化部署](src/main/java/jenkins/JenREADME.md)|src/main/java/jenkins/Jen_README.md
-2|[常用软件部署（包括Windows和Linux操作系统）](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/Env_README.md)|[常用软件部署（包括Windows和Linux操作系统）](src/main/java/environmentdeployment/EnvREADME.md)|src/main/java/environmentdeployment/Env_README.md
+1|[Jenkins自动化部署](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/JenREADME.md)|[Jenkins自动化部署](src/main/java/jenkins/JenREADME.md)|src/main/java/jenkins/JenREADME.md
+2|[常用软件部署（包括Windows和Linux操作系统）](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/EnvREADME.md)|[常用软件部署（包括Windows和Linux操作系统）](src/main/java/environmentdeployment/EnvREADME.md)|src/main/java/environmentdeployment/EnvREADME.md
 
 
 
