@@ -1,5 +1,5 @@
 # 项目说明
-项目中.md文件需使用Typora、IDEA打开观看，或者使用其他mardown软件，建议使用IDEA！！
+项目中主要使用的是.md文件，有必要的话需使用Typora、IDEA打开观看，或者使用其他mardown软件，建议使用Typora！！
 
 软件名称|下载地址
 :---:|:---:
@@ -21,10 +21,13 @@ REMADE.md|项目说明文件
 ---
 ---
 ## 文档链接（更多详情查看对应链接）
-链接|REMADE路径
-:---|:---
-[Jenkins自动化部署](src/main/java/jenkins/Jen_REMADE.md)|src/main/java/jenkins/Jen_REMADE.md
-[常用软件部署（包括Windows和Linux操作系统）](src/main/java/environmentdeployment/Env_REMADE.md)|src/main/java/environmentdeployment/Env_REMADE.md
+* `项目在Github中查看`，点击Github连接；
+* `项目下载到本地`，点击本地链接。
+
+序号|Github链接|本地链接|REMADE路径
+:---|:---|:---|:---
+1|[Jenkins自动化部署](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/Jen_REMADE.md)|[Jenkins自动化部署](src/main/java/jenkins/Jen_REMADE.md)|src/main/java/jenkins/Jen_REMADE.md
+2|[常用软件部署（包括Windows和Linux操作系统）](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/Env_REMADE.md)|[常用软件部署（包括Windows和Linux操作系统）](src/main/java/environmentdeployment/Env_REMADE.md)|src/main/java/environmentdeployment/Env_REMADE.md
 
 
 

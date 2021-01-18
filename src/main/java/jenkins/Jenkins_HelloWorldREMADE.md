@@ -263,6 +263,22 @@ Maven等软件完成代码编译，代码测试与审查，测试，打包等工
 >* Maven 的项目构建管理
 >* GitHub 或 SVN 使用
 
+---
+---
+---
+## 相关链接
+
+* `项目在Github中查看`，点击Github连接；
+* `项目下载到本地`，点击本地链接。
+
+序号|Github链接|本地链接|REMADE路径
+:---|:---|:---|:---
+1|[`初识Jenkins`](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/Jenkins_HelloWorldREMADE.md)|[初识Jenkins](Jenkins_HelloWorldREMADE.md)|/src/main/java/jenkins/Jenkins_HelloWorldREMADE.md
+2|[Jenkins环境安装](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/Jenkins_InstalREAMDE.md)|[Jenkins环境安装](Jenkins_InstalREAMDE.md)|/src/main/java/jenkins/Jenkins_InstalREAMDE.md
+3|[Jenkins+SVN+Maven创建任务](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/Jenkins_SVN_MavenREMADE.md)|[Jenkins+SVN+Maven创建任务](Jenkins_SVN_MavenREMADE.md)|/src/main/java/jenkins/Jenkins_SVN_MavenREMADE.md
+4|[Jenkins+SVN+Maven+Pipeline创建任务](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/Jenkins_SVN_Maven_PipelineREMADE.md)|[Jenkins+SVN+Maven+Pipeline创建任务](Jenkins_SVN_Maven_PipelineREMADE.md)|/src/main/java/jenkins/Jenkins_SVN_Maven_PipelineREMADE.md
+5|[Jenkins+Git+Maven+Pipeline创建任务](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/Jenkins_Git_MavenREMADE.md)|[Jenkins+Git+Maven+Pipeline创建任务](Jenkins_Git_MavenREMADE.md)|/src/main/java/jenkins/Jenkins_Git_MavenREMADE.md
+6|[Jenkins细节优化](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/Jenkins_OptimizationREMADE.md)|[Jenkins细节优化](Jenkins_OptimizationREMADE.md)|/src/main/java/jenkins/Jenkins_OptimizationREMADE.md
 
 
 

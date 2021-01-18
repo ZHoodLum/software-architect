@@ -241,5 +241,19 @@ GitHub hook trigger for GITScm polling|http://b34190894fc4.ngrok.io/github-webho
 ## 八、关于Jenkins+Git+pipeline项目
 　　对于流水线项目，使用GitHub通过web hook触发jenkins自动构建，操作方式基本与maven项目的一致，参照本文教程自己创建一个pipeline项目看一眼就知道了！！！！
 
+---
+---
+---
+## 相关链接
 
+* `项目在Github中查看`，点击Github连接；
+* `项目下载到本地`，点击本地链接。
 
+序号|Github链接|本地链接|REMADE路径
+:---|:---|:---|:---
+1|[初识Jenkins](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/Jenkins_HelloWorldREMADE.md)|[初识Jenkins](Jenkins_HelloWorldREMADE.md)|/src/main/java/jenkins/Jenkins_HelloWorldREMADE.md
+2|[Jenkins环境安装](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/Jenkins_InstalREAMDE.md)|[Jenkins环境安装](Jenkins_InstalREAMDE.md)|/src/main/java/jenkins/Jenkins_InstalREAMDE.md
+3|[Jenkins+SVN+Maven创建任务](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/Jenkins_SVN_MavenREMADE.md)|[Jenkins+SVN+Maven创建任务](Jenkins_SVN_MavenREMADE.md)|/src/main/java/jenkins/Jenkins_SVN_MavenREMADE.md
+4|[Jenkins+SVN+Maven+Pipeline创建任务](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/Jenkins_SVN_Maven_PipelineREMADE.md)|[Jenkins+SVN+Maven+Pipeline创建任务](Jenkins_SVN_Maven_PipelineREMADE.md)|/src/main/java/jenkins/Jenkins_SVN_Maven_PipelineREMADE.md
+5|[`Jenkins+Git+Maven+Pipeline创建任务`](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/Jenkins_Git_MavenREMADE.md)|[Jenkins+Git+Maven+Pipeline创建任务](Jenkins_Git_MavenREMADE.md)|/src/main/java/jenkins/Jenkins_Git_MavenREMADE.md
+6|[Jenkins细节优化](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/Jenkins_OptimizationREMADE.md)|[Jenkins细节优化](Jenkins_OptimizationREMADE.md)|/src/main/java/jenkins/Jenkins_OptimizationREMADE.md
