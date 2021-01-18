@@ -192,7 +192,7 @@ BUILD_ID=dontKillMe  nohup sh ${shell_path}/start.sh start &
 * Remote directory : 指定上传的目录
 * Exec command: 上传成功需要的操作
 ![jenkins26](../../resources/images/jenkins/jenkins26.png)
-远程操作配置后续会在流水线任务中使用 [链接](Jenkins_SVN_Maven_PipelineREMADE.md)
+远程操作配置后续会在流水线任务中使用 [链接](JenkinsSVNMavenPipelineREADME.md)
 
 ---
 ## 九、项目配置_构建设置
@@ -238,11 +238,11 @@ BUILD_ID=dontKillMe  nohup sh ${shell_path}/start.sh start &
 * `项目在Github中查看`，点击Github连接；
 * `项目下载到本地`，点击本地链接。
 
-序号|Github链接|本地链接|REMADE路径
+序号|Github链接|本地链接|README路径
 :---|:---|:---|:---
-1|[初识Jenkins](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/Jenkins_HelloWorldREMADE.md)|[初识Jenkins](Jenkins_HelloWorldREMADE.md)|/src/main/java/jenkins/Jenkins_HelloWorldREMADE.md
-2|[Jenkins环境安装](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/Jenkins_InstalREAMDE.md)|[Jenkins环境安装](Jenkins_InstalREAMDE.md)|/src/main/java/jenkins/Jenkins_InstalREAMDE.md
-3|[`Jenkins+SVN+Maven创建任务`](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/Jenkins_SVN_MavenREMADE.md)|[Jenkins+SVN+Maven创建任务](Jenkins_SVN_MavenREMADE.md)|/src/main/java/jenkins/Jenkins_SVN_MavenREMADE.md
-4|[Jenkins+SVN+Maven+Pipeline创建任务](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/Jenkins_SVN_Maven_PipelineREMADE.md)|[Jenkins+SVN+Maven+Pipeline创建任务](Jenkins_SVN_Maven_PipelineREMADE.md)|/src/main/java/jenkins/Jenkins_SVN_Maven_PipelineREMADE.md
-5|[Jenkins+Git+Maven+Pipeline创建任务](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/Jenkins_Git_MavenREMADE.md)|[Jenkins+Git+Maven+Pipeline创建任务](Jenkins_Git_MavenREMADE.md)|/src/main/java/jenkins/Jenkins_Git_MavenREMADE.md
-6|[Jenkins细节优化](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/Jenkins_OptimizationREMADE.md)|[Jenkins细节优化](Jenkins_OptimizationREMADE.md)|/src/main/java/jenkins/Jenkins_OptimizationREMADE.md
+1|[初识Jenkins](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/JenkinsHelloWorldREADME.md)|[初识Jenkins](JenkinsHelloWorldREADME.md)|/src/main/java/jenkins/JenkinsHelloWorldREADME.md
+2|[Jenkins环境安装](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/JenkinsInstalREAMDE.md)|[Jenkins环境安装](JenkinsInstalREADME.md)|/src/main/java/jenkins/JenkinsInstalREAMDE.md
+3|[`Jenkins+SVN+Maven创建任务`](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/JenkinsSVNMavenREADME.md)|[Jenkins+SVN+Maven创建任务](JenkinsSVNMavenREADME.md)|/src/main/java/jenkins/JenkinsSVNMavenREADME.md
+4|[Jenkins+SVN+Maven+Pipeline创建任务](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/JenkinsSVNMavenPipelineREADME.md)|[Jenkins+SVN+Maven+Pipeline创建任务](JenkinsSVNMavenPipelineREADME.md)|/src/main/java/jenkins/JenkinsSVNMavenPipelineREADME.md
+5|[Jenkins+Git+Maven+Pipeline创建任务](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/JenkinsGitMavenREADME.md)|[Jenkins+Git+Maven+Pipeline创建任务](JenkinsGitMavenREADME.md)|/src/main/java/jenkins/JenkinsGitMavenREADME.md
+6|[Jenkins细节优化](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/JenkinsOptimizationREADME.md)|[Jenkins细节优化](JenkinsOptimizationREADME.md)|/src/main/java/jenkins/JenkinsOptimizationREADME.md

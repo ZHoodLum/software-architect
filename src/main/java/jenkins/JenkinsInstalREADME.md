@@ -12,11 +12,11 @@
 安装文件|版本|安装地址|下载地址一|下载地址二|备注
 :---:|:---|:---:|:---:|:---|-----
 VM 虚拟机|VMware Workstation 15||[下载](https://my.vmware.com/cn/web/vmware/downloads/info/slug/desktop_end_user_computing/vmware_workstation_pro/15_0)||
-JDK|jdk-8u271-linux-x64.tar.gz|[JDK安装](../environmentdeployment/JDK_InstallREMADE.md)|[国内镜像下载](https://mirrors.tuna.tsinghua.edu.cn/AdoptOpenJDK/8/jdk/x64/linux/)|[官方地址下载](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)|
-tomcat|apache-tomcat-8.5.61.tar.gz|[Tomacat安装](../environmentdeployment/Tomcat_InstallREMADE.md)|[下载](https://tomcat.apache.org/download-80.cgi)|&nbsp;|非必需，Jenkins是否需要通过Tomcat启动
-maven|apache-maven-3.3.9-bin.tar.gz|[Maven安装](../environmentdeployment/Maven_InstallREMADE.md)|[下载](https://mirrors.tuna.tsinghua.edu.cn/apache/maven/maven-3/3.3.9/source/)||
+JDK|jdk-8u271-linux-x64.tar.gz|[JDK安装](../environmentdeployment/JDKInstallREADME.md)|[国内镜像下载](https://mirrors.tuna.tsinghua.edu.cn/AdoptOpenJDK/8/jdk/x64/linux/)|[官方地址下载](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)|
+tomcat|apache-tomcat-8.5.61.tar.gz|[Tomacat安装](../environmentdeployment/TomcatInstallREADME.md)|[下载](https://tomcat.apache.org/download-80.cgi)|&nbsp;|非必需，Jenkins是否需要通过Tomcat启动
+maven|apache-maven-3.3.9-bin.tar.gz|[Maven安装](../environmentdeployment/MavenInstallREADME.md)|[下载](https://mirrors.tuna.tsinghua.edu.cn/apache/maven/maven-3/3.3.9/source/)||
 SVN|Subversion 1.12.2||[下载](https://mirrors.tuna.tsinghua.edu.cn/apache/subversion/)|&nbsp;|本地需安装Subversion，用于提交项目；SVN服务器可以安装在本地(宿主机)的或者服务器上，用于管理版本
-Git||[Git安装](../environmentdeployment/Git_InstallREMADE.md)|||
+Git||[Git安装](../environmentdeployment/GitInstallREADME.md)|||
 jenkins|jenkins 2.273||[下载](http://updates.jenkins-ci.org/download/war/)|&nbsp;|jenkins可以通过tomcat、docker、war包形式启动，本次使用war包的形式直接启动jenkins
 
 ---
@@ -201,14 +201,14 @@ gitlab hook|使用webhook自动触发jenkins需要使用的插件
 * `项目在Github中查看`，点击Github连接；
 * `项目下载到本地`，点击本地链接。
 
-序号|Github链接|本地链接|REMADE路径
+序号|Github链接|本地链接|README路径
 :---|:---|:---|:---
-1|[初识Jenkins](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/Jenkins_HelloWorldREMADE.md)|[初识Jenkins](Jenkins_HelloWorldREMADE.md)|/src/main/java/jenkins/Jenkins_HelloWorldREMADE.md
-2|[`Jenkins环境安装`](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/Jenkins_InstalREAMDE.md)|[Jenkins环境安装](Jenkins_InstalREAMDE.md)|/src/main/java/jenkins/Jenkins_InstalREAMDE.md
-3|[Jenkins+SVN+Maven创建任务](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/Jenkins_SVN_MavenREMADE.md)|[Jenkins+SVN+Maven创建任务](Jenkins_SVN_MavenREMADE.md)|/src/main/java/jenkins/Jenkins_SVN_MavenREMADE.md
-4|[Jenkins+SVN+Maven+Pipeline创建任务](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/Jenkins_SVN_Maven_PipelineREMADE.md)|[Jenkins+SVN+Maven+Pipeline创建任务](Jenkins_SVN_Maven_PipelineREMADE.md)|/src/main/java/jenkins/Jenkins_SVN_Maven_PipelineREMADE.md
-5|[Jenkins+Git+Maven+Pipeline创建任务](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/Jenkins_Git_MavenREMADE.md)|[Jenkins+Git+Maven+Pipeline创建任务](Jenkins_Git_MavenREMADE.md)|/src/main/java/jenkins/Jenkins_Git_MavenREMADE.md
-6|[Jenkins细节优化](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/Jenkins_OptimizationREMADE.md)|[Jenkins细节优化](Jenkins_OptimizationREMADE.md)|/src/main/java/jenkins/Jenkins_OptimizationREMADE.md
+1|[初识Jenkins](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/JenkinsHelloWorldREADME.md)|[初识Jenkins](JenkinsHelloWorldREADME.md)|/src/main/java/jenkins/JenkinsHelloWorldREADME.md
+2|[`Jenkins环境安装`](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/JenkinsInstalREAMDE.md)|[Jenkins环境安装](JenkinsInstalREADME.md)|/src/main/java/jenkins/JenkinsInstalREAMDE.md
+3|[Jenkins+SVN+Maven创建任务](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/JenkinsSVNMavenREADME.md)|[Jenkins+SVN+Maven创建任务](JenkinsSVNMavenREADME.md)|/src/main/java/jenkins/JenkinsSVNMavenREADME.md
+4|[Jenkins+SVN+Maven+Pipeline创建任务](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/JenkinsSVNMavenPipelineREADME.md)|[Jenkins+SVN+Maven+Pipeline创建任务](JenkinsSVNMavenPipelineREADME.md)|/src/main/java/jenkins/JenkinsSVNMavenPipelineREADME.md
+5|[Jenkins+Git+Maven+Pipeline创建任务](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/JenkinsGitMavenREADME.md)|[Jenkins+Git+Maven+Pipeline创建任务](JenkinsGitMavenREADME.md)|/src/main/java/jenkins/JenkinsGitMavenREADME.md
+6|[Jenkins细节优化](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/JenkinsOptimizationREADME.md)|[Jenkins细节优化](JenkinsOptimizationREADME.md)|/src/main/java/jenkins/JenkinsOptimizationREADME.md
 
 
 

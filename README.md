@@ -16,7 +16,7 @@ src . main . java . jenkins|jenkins自动化部署
 src . main . resources . images |操作文档使用的图片
 src . main . resources . PDF |参考的PDF文件及日常使用的PDF
 src . main . resources . tools |常用的工具，一般是Linux环境居多
-REMADE.md|项目说明文件
+README.md|项目说明文件
 
 ---
 ---
@@ -24,10 +24,10 @@ REMADE.md|项目说明文件
 * `项目在Github中查看`，点击Github连接；
 * `项目下载到本地`，点击本地链接。
 
-序号|Github链接|本地链接|REMADE路径
+序号|Github链接|本地链接|README路径
 :---|:---|:---|:---
-1|[Jenkins自动化部署](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/Jen_REMADE.md)|[Jenkins自动化部署](src/main/java/jenkins/Jen_REMADE.md)|src/main/java/jenkins/Jen_REMADE.md
-2|[常用软件部署（包括Windows和Linux操作系统）](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/Env_REMADE.md)|[常用软件部署（包括Windows和Linux操作系统）](src/main/java/environmentdeployment/Env_REMADE.md)|src/main/java/environmentdeployment/Env_REMADE.md
+1|[Jenkins自动化部署](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/Jen_README.md)|[Jenkins自动化部署](src/main/java/jenkins/JenREADME.md)|src/main/java/jenkins/Jen_README.md
+2|[常用软件部署（包括Windows和Linux操作系统）](https://github.com/ZHoodLum/software-architect/blob/master/src/main/java/jenkins/Env_README.md)|[常用软件部署（包括Windows和Linux操作系统）](src/main/java/environmentdeployment/EnvREADME.md)|src/main/java/environmentdeployment/Env_README.md
 
 
 
