@@ -12,6 +12,7 @@
 Jenkins中文官方文档|[链接](https://www.jenkins.io/zh/doc/)|包括Jenkins入门、教程、用户手册、参考资料（流水线语法）
 Jenkins官方地址|[链接](https://www.jenkins.io/)|
 Jenkins源码Github地址|[链接](https://github.com/jenkinsci/jenkins)|Jenkins的源码地址
+Pipeline流水线语法|[博主链接](http://192.168.1.102:10011/job/springboot_git_pipeline/pipeline-syntax/)|流水线语法
 自动化部署博客|[博主链接](https://www.cnblogs.com/momoyan/p/12775996.html#auto-id-3)|一个博主的链接，里面也有关于自动化部署的文章
 
 ---
