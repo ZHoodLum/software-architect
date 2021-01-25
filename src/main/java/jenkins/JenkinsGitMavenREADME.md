@@ -172,22 +172,25 @@ GitHub hook trigger for GITScm polling|http://b34190894fc4.ngrok.io/github-webho
 
 ### 7. Gitlab配置webhook实现Jenkins自动构建
 
-1）开启webhook功能 使用root账户登录到后台
+1）Gitlab代码拉取配置
+![jenkins107](../../resources/images/jenkins/jenkins107.png)
+
+2）Jenkins自动构建配置
+![jenkins106](../../resources/images/jenkins/jenkins106.png)
+![jenkins105](../../resources/images/jenkins/jenkins105.png)
+
+3）Gitlab开启webhook功能 使用root账户登录到后台
 
 点击Admin Area -> Settings -> Network 勾选"Allow requests to the local network from web hooks and services"
 
+允许从web挂钩和服务向本地网络发出请求，不开启无法在gitlab仓库项目中添加本地的web hook!!
 ![jenkins102](../../resources/images/jenkins/jenkins102.png)
 
-2）在项目添加webhook 
+4）在Gitlab的仓库项目（springboot）中添加webhook 
 
 点击项目->Settings->Integrations
 
 ![jenkins103](../../resources/images/jenkins/jenkins103.png)
-
-
-
-
-
 
 
 ---
