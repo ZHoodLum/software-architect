@@ -110,49 +110,57 @@ clean install -Dmaven.test.skip=true -Ptest
 #### 1.1 构建Shell脚本一如下：
 ```shell script
 #!/bin/sh
-shell_path="/root/workplace/esbsg/bin"
-cd /root/workplace/esbsg/
+init_shell="/root/workplace/springboot"
+shell_path="/root/workplace/springboot/bin"
 
-if [ $? -eq "0" ];then
+cd ${init_shell}
 
-	chmod -R 755 bin
-	cd bin
+#是否为第一次部署项目
+if [ $? -eq "0" ]; then
+  	echo 'iterator commit......'
+  	chmod -R 755 ${shell_path}
 
-	#stop progress
-	sh ${shell_path}/start.sh stop2
+  	#stop progress
+  	sh ${shell_path}/stop.sh
 
-	#bak project
-	cd /root/workplace
-	tar -cvf /root/workplace/file_bak/esbsg_bak_`date +%Y%m%d`.zip esbsg --exclude=esbsg/lib
+  	#bak project
+  	cd /root/workplace/
+  	mkdir version_bak
+  	mkdir project_bak
+	tar -cvf /root/workplace/version_bak/springboot_`date +%Y%m%d`.zip /root/workplace/springboot
+	
+    #update project
+	cp /root/.jenkins/workspace/springboot_git_maven/target/springboot.zip /root/workplace
 
-	#update project
-	cp /root/.jenkins/workspace/esbsg/target/esbsg.zip /root/workplace/
-	unzip -o esbsg.zip
+	unzip -o springboot.zip
 
-	#mv
-	mv esbsg.zip /root/workplace/tmp/esbsg_`date +%Y%m%d`.zip
+	#mv version_bak
+	mv springboot.zip /root/workplace/project_bak/springboot_$(date +%Y%m%d).zip
 
 	#start progress
-	cd /root/workplace/esbsg
-	chmod -R 755 bin
-    echo "path is ${shell_path}"
-    BUILD_ID=dontKillMe  nohup sh ${shell_path}/start.sh start &
+	chmod -R 755 ${shell_path}
 
+	echo "path is ${shell_path}"
+
+	BUILD_ID=dontKillMe  nohup sh ${shell_path}/start.sh &
 else
 	#update project
-	cp /root/.jenkins/workspace/esbsg/target/esbsg.zip /root/workplace/
-	unzip -o esbsg.zip
+	cp /root/.jenkins/workspace/springboot_git_maven/target/springboot.zip /root/workplace/
+
+	# 解压
+	unzip -o springboot.zip
 
 	#mv
-	mv esbsg.zip /root/workplace/tmp/esbsg_`date +%Y%m%d`.zip
+	mv springboot.zip /root/workplace/project_bak/springboot_`date +%Y%m%d`.zip
 
 	#start progress
-    cd /root/workplace/esbsg
+    cd /root/workplace/springboot
 	chmod -R 755 bin
-	BUILD_ID=dontKillMe nohup ${shell_path}/start.sh start &
+	BUILD_ID=dontKillMe nohup ${shell_path}/start.sh &
 fi
 exit 0
 echo "===========================end========================="
+
 ```
 
 #### 1.2 构建Shell脚本二如下：

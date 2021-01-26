@@ -1,3 +1,5 @@
+
+
 # Jenkins+SVN+Maven+Pipeline创建任务
 
 > 注：以下操作环境需要Jenkins安装插件【Blue Ocean】，方便观看
@@ -19,7 +21,7 @@ Jenkins 2.x的精髓是Pipeline as Code，那为什么要用Pipeline呢？jenkin
 举个例子，`job构建工作在master节点，自动化测试脚本在slave节点，这时候jenkins1.0就无法同时运行两个节点，而Pipeline可以。`
 
 ---
-## 二、使用Pipeline有以下好处（来自翻译自官方文档）：
+## 二、使用Pipeline有以下好处（翻译来自官方文档）：
 >* 代码：Pipeline以代码的形式实现，通常被检入源代码控制，使团队能够编辑，审查和迭代其传送流程。 
 >* 持久：无论是计划内的还是计划外的服务器重启，Pipeline都是可恢复的。 
 >* 可停止：Pipeline可接收交互式输入，以确定是否继续执行Pipeline。 
@@ -267,15 +269,48 @@ https://10.16.1.12:8089/svn/svnProjectName/trunk/base/projectName/bin
 首先需要添加需要远程操作的Server服务器，操作如下：
 > 选择系统管理（System Configuration） >> 系统设置（Configure System） >>  滑倒界面最下面找到（SSH Servers）
 
+* 在系统管理-系统配置   中配置需要远程部署的服务器
 添加服务器操作位置如下：
 ![jenkins46](../../resources/images/jenkins/jenkins46.png)
 服务具体配置如下图所示：
 ![jenkins47](../../resources/images/jenkins/jenkins47.png)
+![jenkins109](../../resources/images/jenkins/jenkins109.png)
 
 上面配置好了之后，就可以通过流水线（pipeline）的脚本来实现远程部署任务！！！
 
+* 在构建项目中通过pipeline语法生成piprline代码
+  ![jenkins108](../../resources/images/jenkins/jenkins108.png)
+
+>* Name ：选择需要的服务器
+>* Source files： 需要上传的文件。支持通配符。需要特别注意的是，需要上传的文件必须位于当前的workspace中，否则会上传失败。
+>* Remove prefix：移除指定前缀。例如我指定了移除test，这个文件会直接上传到/home/test/html/下，否则会上传到/home/test/html/test下。
+>* Remote directory：远程目录。注意！ 此目录是基于之前设置服务器时设置远程目录的，即这里的目录是位于服务器设置目录下的相对目录。
+
+Exec command：需要执行的命令。这里不做太多说明。
+
+Exec command脚本如下：
+```shell
+cd /root/workplace/
+unzip -o  esbsg.zip
+chmod -R 755 /root/workplace/esbsg/bin
+ssh root@192.168.1.128 "/root/workplace/esbsg/bin/jenkins_release_project.sh"
+```
+
+生成出来没有执行远程脚本的pipeline代码如下：
+```shell
+sshPublisher(publishers: [sshPublisherDesc(configName: 'root_10.192.1.128', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: 'target/', sourceFiles: 'target/esbsg.zip')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+```
+
+配置完成后就可以构建了，日志如下：
+```shell
+SSH: EXEC: completed after 200 ms
+SSH: Disconnecting configuration [web] ...
+SSH: Transferred 1 file(s)
+Finished: SUCCESS
+```
+
 ---
-## 九、Jenkinsfile文件脚本内容
+## 九、Jenkinsfile文件脚本内容(SVN版本库)
 ```groovy
 pipeline {
     agent any
@@ -376,7 +411,101 @@ pipeline {
 }
 ```
 
+## 十、Jenkinsfile文件脚本内容(Gitlab版本库)
+
+```
+pipeline {
+    agent any
+    stages {
+        stage('starting build') {
+            steps {
+                echo 'starting build.......'
+            }
+        }
+        stage('pull2 code') {
+            steps {
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], browser: [$class: 'GitLab', repoUrl: 'http://192.168.1.102:10010/root/springboot.git', version: '1.0'], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'b3be9cac-4820-41cf-93ee-32380f2641a0', url: 'http://192.168.1.102:10010/root/springboot']]])
+            }
+        }
+        stage('mvn package') {
+            steps {
+                sh 'mvn -Dmaven.test.skip=true clean package'
+            }
+        }
+        stage('replace project') {
+            steps {
+                sshPublisher(publishers: [
+                  sshPublisherDesc(
+                  configName: 'root_12.15.1.1',
+                  transfers: [sshTransfer(cleanRemote: false, excludes: '',
+                        execCommand: '''
+                            cd /root/workplace/
+                            unzip -o  esbsg.zip
+                            chmod -R 755 /root/workplace/esbsg/bin
+                            source /root/workplace/esbsg/bin/jenkins_release_project.sh
+                        ''',
+                        execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+',
+                        remoteDirectory: '', remoteDirectorySDF: false, removePrefix: 'target/', sourceFiles: 'target/esbsg.zip')
+                    ],
+                    usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false),
+
+                  sshPublisherDesc(configName: 'root_12.15.1.1',
+                    transfers: [sshTransfer(cleanRemote: false, excludes: '',
+                        execCommand: '''
+                            cd /root/workplace/
+                            unzip -o  esbsg.zip
+                            chmod -R 755 /root/workplace/esbsg/bin
+                            source /root/workplace/esbsg/bin/jenkins_release_project.sh
+                        ''',
+                        execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+',
+                        remoteDirectory: '', remoteDirectorySDF: false, removePrefix: 'target/', sourceFiles: 'target/esbsg.zip')
+                    ],
+                    usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)
+                ])
+            }
+        }
+    }
+    post {
+      always {
+        echo '构建状态:结束'
+      }
+      unstable {
+        echo '构建状态:不稳定'
+      }
+      notBuilt {
+        echo '构建状态:未构建'
+      }
+      cleanup {
+        echo '构建状态:cleanup  注：如果无论构建状态如何，始终在所有其他条件下运行'
+      }
+      regression {
+        echo '构建状态:regression  注：如果当前构建状态比以前的构建状态差，则运行'
+      }
+      aborted {
+        echo '当构建状态为“已中止”时运行'
+      }
+      success {
+        echo '构建状态:成功'
+      }
+      failure {
+        echo '构建状态:失败'
+      }
+      unsuccessful {
+        echo '当前构建状态为“已终止”，“失败”或“不稳定”'
+      }
+      fixed {
+        echo '构建状态:fixed  注：先前的构建不成功并且当前的构建状态为“成功，则运行'
+      }
+      changed {
+        echo '构建状态:fixed  注：如果当前构建状态与先前的构建状态不同，则运行'
+      }
+    }
+```
+
+
+
 其中远程操作的脚本主要是：
+
 ```groovy
 sshPublisherDesc(
     configName: 'root_12.1.1.12',
